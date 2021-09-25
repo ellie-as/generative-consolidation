@@ -83,5 +83,4 @@ history = vae.fit(predictions, epochs=generative_epochs, verbose=0)
 fig = plot_history(history)
 ```
 
-The Hopfield network code is based on https://github.com/ml-jku/hopfield-layers
-The variational autoencoder code is based on https://github.com/keras-team/keras-io/blob/master/examples/generative/vae.py
+The Hopfield network code is based on https://github.com/ml-jku/hopfield-layers and the variational autoencoder code is based on https://github.com/keras-team/keras-io/blob/master/examples/generative/vae.py.
