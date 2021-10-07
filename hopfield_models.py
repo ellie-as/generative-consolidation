@@ -257,6 +257,7 @@ class ContinuousHopfield:
         return numerators/denominator
 
     def softmax_normalized(self,z):
+        z = z.astype(np.float128)
         numerators = np.exp(z/self.max_norm) # top
         denominator = np.sum(numerators) # bottom
         return numerators/denominator

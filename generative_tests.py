@@ -8,12 +8,13 @@ import tensorflow.keras.backend as K
 from scipy.interpolate import interp1d
 from sklearn.decomposition import PCA
 from utils import display, noise
+from math import sqrt
 
 
-def check_generative_recall(vae, test_data, noise_level=0.2):
+def check_generative_recall(vae, test_data, noise_level=0.25):
     test_data = noise(test_data, noise_factor=noise_level)
     latents = vae.encoder.predict(test_data)
-    predictions = vae.decoder.predict(latents[2])
+    predictions = vae.decoder.predict(latents[0])
     fig = display(test_data, predictions, title='Inputs and outputs for VAE')
     return fig
 
@@ -50,6 +51,52 @@ def interpolate_ims(latents, vae, first, second):
     fig.suptitle('Interpolation between items')
     plt.show()
     return fig
+
+
+def vector_arithmetic(latents, vae, first, second, third):
+    encoded_imgs = latents[0]
+    enc1 = encoded_imgs[first:first+1]
+    enc2 = encoded_imgs[second:second+1]
+    enc3 = encoded_imgs[third:third+1]
+
+    fig, axs = plt.subplots(1,4)
+    axs[0].imshow(vae.decoder.predict(enc1.reshape(1,encoded_imgs.shape[1]))[0])
+    axs[0].axis('off')
+    axs[1].imshow(vae.decoder.predict(enc2.reshape(1,encoded_imgs.shape[1]))[0])
+    axs[1].axis('off')
+    axs[2].imshow(vae.decoder.predict(enc3.reshape(1,encoded_imgs.shape[1]))[0])
+    axs[2].axis('off')
+    #enc1-enc2=enc3-enc4 -> enc4=enc3+enc2-enc1
+    res = - enc1 + enc2 + enc3
+    axs[3].imshow(vae.decoder.predict(res.reshape(1,encoded_imgs.shape[1]))[0])
+    axs[3].axis('off')
+    fig.suptitle('Vector arithmetic')
+    plt.show()
+    return fig
+
+def add_vae_self_sampling(vae, num_to_sample, test_data, scale = 1.0):
+    
+    latents = vae.encoder.predict(test_data)
+    pca = PCA(n_components=2)
+    pca.fit(latents[0])
+    
+    # display a n*n 2D manifold of digits
+    n = int(sqrt(num_to_sample))
+    digit_size = 28
+    scale = scale
+    # linearly spaced coordinates corresponding to the 2D plot
+    # of digit classes in the latent space
+    grid_x = np.linspace(-scale, scale, n)
+    grid_y = np.linspace(-scale, scale, n)[::-1]
+
+    samples = []
+    for i, yi in enumerate(grid_y):
+        for j, xi in enumerate(grid_x):
+            z_sample = np.array([[xi, yi]])
+            x_decoded = vae.decoder.predict(pca.inverse_transform(z_sample))
+            digit = x_decoded[0].reshape(digit_size, digit_size)
+            samples.append(digit)
+    return samples
 
     
 def plot_latent_space(vae, noisy_test_data, n=20, figsize=15):

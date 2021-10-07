@@ -1,3 +1,4 @@
+
 ### Consolidation simulations
 
 Work-in-progress code for modelling consolidation as teacher-student learning, in which initial representations of memories are replayed to train a generative model.
@@ -19,9 +20,24 @@ from end_to_end import run_end_to_end
 import tensorflow as tf
 
 # set tensorflow random seed to make outputs reproducible
-tf.random.set_seed(1234)
+tf.random.set_seed(123)
+```
 
-run_end_to_end(initial='hopfield', generative='vae', dataset='mnist', generative_epochs=300, num=1000, latent_dim=5)
+The cell below recreates the results in the 'outputs' folder:
+
+
+```python
+run_end_to_end(initial='hopfield', generative='vae', dataset='shapes3d', generative_epochs=1000, 
+               num=1000, latent_dim=10, kl_weighting=1)
+
+run_end_to_end(initial='hopfield', generative='vae', dataset='solids', generative_epochs=1000, 
+               num=1000, latent_dim=10, kl_weighting=1)
+
+run_end_to_end(initial='hopfield', generative='vae', dataset='fashion_mnist', generative_epochs=1000, 
+               num=1000, latent_dim=10, kl_weighting=1)
+
+run_end_to_end(initial='hopfield', generative='vae', dataset='mnist', generative_epochs=1000, 
+               num=1000, latent_dim=10, kl_weighting=1)
 ```
 
 The options can be swapped out to run different experiments, e.g. to try with an autoencoder as the initial model:
@@ -83,4 +99,5 @@ history = vae.fit(predictions, epochs=generative_epochs, verbose=0)
 fig = plot_history(history)
 ```
 
-The Hopfield network code is based on https://github.com/ml-jku/hopfield-layers and the variational autoencoder code is based on https://github.com/keras-team/keras-io/blob/master/examples/generative/vae.py.
+The Hopfield network code is based on https://github.com/ml-jku/hopfield-layers
+The variational autoencoder code is based on https://github.com/keras-team/keras-io/blob/master/examples/generative/vae.py
