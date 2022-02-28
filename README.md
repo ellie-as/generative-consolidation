@@ -1,103 +1,33 @@
 
-### Consolidation simulations
+### A generative computational model of consolidation
 
-Work-in-progress code for modelling consolidation as teacher-student learning, in which initial representations of memories are replayed to train a generative model.
+Code for modelling consolidation as teacher-student learning, in which initial representations of memories are replayed to train a generative model.
 
-To use this code, install the requirements and launch a jupyter notebook (or alternatively use AWS SageMaker, e.g. the conda_amazonei_tensorflow2_p36 kernel).
+To use this code, clone the repo and launch jupyter lab. Each notebook installs its requirements in the first cell (however in the case of installation issues, you can use AWS SageMaker, e.g. the code was tested with the conda_amazonei_tensorflow2_p36 kernel).
 
-#### End-to-end simulation example
+#### Subfolders
 
-The following code snippet:
-* Trains a modern Hopfield network on the MNIST dataset of handwritten digits
-* Gives the Hopfield network random noise as an input, and gets the outputs (which should be memories)
-* Trains a variational autoencoder on the 'memories'
-* Runs a set of tests, e.g. tests recall and interpolation between items, and plots the latent space projected into 2D
-* Saves the outputs to a pdf in the 'outputs' folder (see example)
+* main_results: code for modelling consolidation as teacher-student learning, with a modern Hopfield network teacher (representating the initial hippocampal encoding), and a VAE student (representing the generative model trained by consolidation).
+* memory_distortions: other memory distortion results (e.g. modelling the Bartlett (1932) and Deese-Roediger-McDermott results)
+* shapes_vae: code for exploring the latent space of a VAE trained on the shapes3d dataset, and testing how latent representations may support semantic memory.
+* novelty_and_memory: 
+* hybrid_recall
+* sequence_learning
 
+#### Figures in paper
 
-```python
-from end_to_end import run_end_to_end
-import tensorflow as tf
+Figure | Corresponding code
+--- | ---
+Figure 3 | (./main_results/Consolidation_simulation.ipynb)[./main_results/Consolidation_simulation.ipynb]
+Figure 4 | (./main_results/Consolidation_simulation.ipynb)[./main_results/Consolidation_simulation.ipynb]
+Figure 5 | (./main_results/Consolidation_simulation.ipynb)[./main_results/Consolidation_simulation.ipynb]
+Figure 6 | (./main_results/Memory_distortions.ipynb)[./main_results/Memory_distortions.ipynb]
+Figure 8 | (./additional_distortions/Final_CNN_DailyMail_DRM_VAE_and_AE.ipynb)[./additional_distortions/Final_CNN_DailyMail_DRM_VAE_and_AE.ipynb]
+Figure 9 | (./shapes_vae/shapes_vae-semantic_knowledge.ipynb)[./shapes_vae/shapes_vae-semantic_knowledge.ipynb]
+Figure 10 | (./shapes_vae/shapes_vae-semantic_knowledge.ipynb)[./shapes_vae/shapes_vae-semantic_knowledge.ipynb]
+Figure 11 | (./shapes_vae/shapes_vae-semantic_knowledge.ipynb)[./shapes_vae/shapes_vae-semantic_knowledge.ipynb]
+Figure 12 | (./shapes_vae/shapes_vae-semantic_knowledge.ipynb)[./shapes_vae/shapes_vae-semantic_knowledge.ipynb]
+Figure 13 | (./novelty_and_memory/Generate_novelty_plots.ipynb)[./novelty_and_memory/Generate_novelty_plots.ipynb]
+Figure 14 | (./hybrid_recall/Hybrid_recall.ipynb)[./hybrid_recall/Hybrid_recall.ipynb]
+Figure 16 | (./sequence_learning/Generative sequence model - durrant.ipynb)[./sequence_learning/Generative sequence model - durrant.ipynb]
 
-# set tensorflow random seed to make outputs reproducible
-tf.random.set_seed(123)
-```
-
-The cell below recreates the results in the 'outputs' folder:
-
-
-```python
-run_end_to_end(initial='hopfield', generative='vae', dataset='shapes3d', generative_epochs=1000, 
-               num=1000, latent_dim=10, kl_weighting=1)
-
-run_end_to_end(initial='hopfield', generative='vae', dataset='solids', generative_epochs=1000, 
-               num=1000, latent_dim=10, kl_weighting=1)
-
-run_end_to_end(initial='hopfield', generative='vae', dataset='fashion_mnist', generative_epochs=1000, 
-               num=1000, latent_dim=10, kl_weighting=1)
-
-run_end_to_end(initial='hopfield', generative='vae', dataset='mnist', generative_epochs=1000, 
-               num=1000, latent_dim=10, kl_weighting=1)
-```
-
-The options can be swapped out to run different experiments, e.g. to try with an autoencoder as the initial model:
-
-
-```python
-run_end_to_end(initial='autoencoder', generative='vae', dataset='mnist', initial_epochs=10, generative_epochs=10)
-```
-
-#### Other examples
-
-Prepare the training data:
-
-
-```python
-train_data, test_data, noisy_train_data, noisy_test_data = prepare_data()
-```
-
-Create a modern Hopfield network and store 1000 MNIST memories:
-
-
-```python
-net = hopfield_utils.create_hopfield(1000, hopfield_type='continuous')
-```
-
-Alternatively, build and fit a denoising autoencoder:
-
-
-```python
-autoencoder = create_autoencoder()
-
-autoencoder.fit(
-    x=noisy_train_data,
-    y=train_data,
-    epochs=initial_epochs,
-    batch_size=128,
-    shuffle=True,
-    validation_data=(noisy_test_data, test_data),
-)
-```
-
-Display recall from random noise by the initial model:
-
-
-```python
-predictions, fig = check_initial_recall(autoencoder, train_data)
-```
-
-Train a variational autoencoder on replayed memories from the initial model (i.e. outputs when the initial model is presented with random noise), and plot the loss over time:
-
-
-```python
-encoder, decoder = build_encoder_decoder(latent_dim = 5)
-vae = VAE(encoder, decoder, kl_weighting=1)
-opt = keras.optimizers.Adam(lr=0.005, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0, amsgrad=True)
-vae.compile(optimizer=opt)
-history = vae.fit(predictions, epochs=generative_epochs, verbose=0)
-
-fig = plot_history(history)
-```
-
-The Hopfield network code is based on https://github.com/ml-jku/hopfield-layers
-The variational autoencoder code is based on https://github.com/keras-team/keras-io/blob/master/examples/generative/vae.py
