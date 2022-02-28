@@ -21,12 +21,12 @@ Figure 4 | [./main_results/Consolidation_simulation.ipynb](./main_results/Consol
 Figure 5 | [./main_results/Consolidation_simulation.ipynb](./main_results/Consolidation_simulation.ipynb)
 Figure 6 | [./main_results/Memory_distortions.ipynb](./main_results/Memory_distortions.ipynb)
 Figure 8 | [./additional_distortions/DRM_VAE_and_AE.ipynb](./additional_distortions/DRM_VAE_and_AE.ipynb)
-Figure 9 | [./shapes_vae/shapes_vae-semantic_knowledge.ipynb](./shapes_vae/shapes_vae-semantic_knowledge.ipynb)
-Figure 10 | [./shapes_vae/shapes_vae-semantic_knowledge.ipynb](./shapes_vae/shapes_vae-semantic_knowledge.ipynb)
-Figure 11 | [./shapes_vae/shapes_vae-semantic_knowledge.ipynb](./shapes_vae/shapes_vae-semantic_knowledge.ipynb)
+Figure 9 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-latent_space.ipynb)
+Figure 10 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-latent_space.ipynb)
+Figure 11 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-latent_space.ipynb)
 Figure 12 | [./shapes_vae/shapes_vae-semantic_knowledge.ipynb](./shapes_vae/shapes_vae-semantic_knowledge.ipynb)
 Figure 13 | [./main_results/Generate_novelty_plots.ipynb](./novelty_and_memory/Generate_novelty_plots.ipynb)
 Figure 14 | [./main_results/Hybrid_recall.ipynb](./hybrid_recall/Hybrid_recall.ipynb)
-Figure 15 | [./sequence_learning/Durrant sequence model.ipynb](./sequence_learning/Durrant sequence model.ipynb)
+Figure 15 | [./sequence_learning/Durrant_sequence_model.ipynb](./sequence_learning/Durrant_sequence_model.ipynb)
 
 
