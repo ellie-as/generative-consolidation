@@ -27,6 +27,6 @@ Figure 11 | [./shapes_vae/shapes_vae-semantic_knowledge.ipynb](./shapes_vae/shap
 Figure 12 | [./shapes_vae/shapes_vae-semantic_knowledge.ipynb](./shapes_vae/shapes_vae-semantic_knowledge.ipynb)
 Figure 13 | [./main_results/Generate_novelty_plots.ipynb](./novelty_and_memory/Generate_novelty_plots.ipynb)
 Figure 14 | [./main_results/Hybrid_recall.ipynb](./hybrid_recall/Hybrid_recall.ipynb)
-Figure 15 | [./main_results/Hybrid_recall.ipynb](./sequence_learning/Durrant sequence model.ipynb)
+Figure 15 | [./sequence_learning/Durrant sequence model.ipynb](./sequence_learning/Durrant sequence model.ipynb)
 
 
