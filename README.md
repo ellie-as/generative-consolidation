@@ -7,12 +7,12 @@ To use this code, clone the repo and launch jupyter lab. Each notebook installs 
 
 #### Subfolders
 
-* main_results: code for modelling consolidation as teacher-student learning, with a modern Hopfield network teacher (representating the initial hippocampal encoding), and a VAE student (representing the generative model trained by consolidation).
-* memory_distortions: other memory distortion results (e.g. modelling the Bartlett (1932) and Deese-Roediger-McDermott results)
-* shapes_vae: code for exploring the latent space of a VAE trained on the shapes3d dataset, and testing how latent representations may support semantic memory.
-* novelty_and_memory: code for testing novelty-mediated consolidation.
-* hybrid_recall: code for testing how both the teacher and student network could contribute to recall of a partially consolidated memory
-* sequence_learning: code for exploring how the results may extend to memory for sequences and structural inference.
+* **main_results**: code for modelling consolidation as teacher-student learning, with a modern Hopfield network teacher (representating the initial hippocampal encoding), and a VAE student (representing the generative model trained by consolidation).
+* **memory_distortions**: other memory distortion results (e.g. modelling the Bartlett (1932) and Deese-Roediger-McDermott results)
+* **shapes_vae**: code for exploring the latent space of a VAE trained on the shapes3d dataset, and testing how latent representations may support semantic memory.
+* **novelty_and_memory**: code for testing novelty-mediated consolidation.
+* **hybrid_recall**: code for testing how both the teacher and student network could contribute to recall of a partially consolidated memory
+* **sequence_learning**: code for exploring how the results may extend to memory for sequences and structural inference.
 
 #### Figures in paper
 
