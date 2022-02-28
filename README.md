@@ -22,7 +22,7 @@ Figure 3 | [./main_results/Consolidation_simulation.ipynb](./main_results/Consol
 Figure 4 | [./main_results/Consolidation_simulation.ipynb](./main_results/Consolidation_simulation.ipynb)
 Figure 5 | [./main_results/Consolidation_simulation.ipynb](./main_results/Consolidation_simulation.ipynb)
 Figure 6 | [./main_results/Memory_distortions.ipynb](./main_results/Memory_distortions.ipynb)
-Figure 8 | [./additional_distortions/Final_CNN_DailyMail_DRM_VAE_and_AE.ipynb)(./additional_distortions/Final_CNN_DailyMail_DRM_VAE_and_AE.ipynb)
+Figure 8 | [./additional_distortions/Final_CNN_DailyMail_DRM_VAE_and_AE.ipynb](./additional_distortions/Final_CNN_DailyMail_DRM_VAE_and_AE.ipynb)
 Figure 9 | [./shapes_vae/shapes_vae-semantic_knowledge.ipynb](./shapes_vae/shapes_vae-semantic_knowledge.ipynb)
 Figure 10 | [./shapes_vae/shapes_vae-semantic_knowledge.ipynb](./shapes_vae/shapes_vae-semantic_knowledge.ipynb)
 Figure 11 | [./shapes_vae/shapes_vae-semantic_knowledge.ipynb](./shapes_vae/shapes_vae-semantic_knowledge.ipynb)
