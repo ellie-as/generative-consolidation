@@ -1,0 +1,4 @@
+simpletransformers
+tensorflow
+tensorflow_datasets
+wordcloud
