@@ -1,7 +1,7 @@
 from utils import prepare_data, noise, display
 from initial_model import create_autoencoder
 from initial_tests import check_initial_recall, iterative_recall
-from generative_model import build_encoder_decoder_v1, VAE,build_encoder_decoder_v2, build_encoder_decoder_v3, build_encoder_decoder_v4, build_encoder_decoder_v5
+from generative_model import VAE, build_encoder_decoder_v3, build_encoder_decoder_v5
 from generative_tests import interpolate_ims, plot_latent_space, check_generative_recall, plot_history, vector_arithmetic
 from tensorflow import keras
 import numpy as np
