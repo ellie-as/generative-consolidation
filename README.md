@@ -35,8 +35,8 @@ Figure 9 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-
 Figure 10 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-latent_space.ipynb)
 Figure 11 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-latent_space.ipynb)
 Figure 12 | [./shapes_vae/shapes_vae-semantic_knowledge.ipynb](./shapes_vae/shapes_vae-semantic_knowledge.ipynb)
-Figure 13 | [./main_results/Novelty_and_consolidation.ipynb](./novelty_and_memory/Generate_novelty_plots.ipynb)
-Figure 14 | [./main_results/Hybrid_recall.ipynb](./hybrid_recall/Hybrid_recall.ipynb)
+Figure 13 | [./main_results/Novelty_and_consolidation.ipynb](./main_results/Novelty_and_consolidation.ipynb)
+Figure 14 | [./main_results/Hybrid_recall.ipynb](./main_results/Hybrid_recall.ipynb)
 Figure 15 | [./sequence_learning/Durrant_sequence_model.ipynb](./sequence_learning/Durrant_sequence_model.ipynb)
 Figure 16 | [./sequence_learning/Graph_sequence_model.ipynb](./sequence_learning/Graph_sequence_model.ipynb)
 
