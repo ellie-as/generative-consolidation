@@ -14,7 +14,7 @@ import matplotlib.backends.backend_pdf
 from config import models_dict, dims_dict
 
 
-def run_end_to_end(initial='autoencoder', generative='vae', dataset='mnist', initial_epochs=10, generative_epochs=10, num=100, latent_dim=5, kl_weighting=1, hopfield_type='continuous', lr=0.001):
+def run_end_to_end(initial='autoencoder', generative='vae', dataset='mnist', initial_epochs=10, generative_epochs=10, num=100, latent_dim=5, kl_weighting=1, hopfield_type='continuous', lr=0.001, vector_arithmetic=True):
     
     pdf = matplotlib.backends.backend_pdf.PdfPages("./outputs/output_{}_{}items_{}_{}eps_{}_{}eps_{}lv_{}lr_{}kl.pdf".format(dataset, num, initial, initial_epochs, generative, generative_epochs, latent_dim, lr, kl_weighting))
     
@@ -96,9 +96,10 @@ def run_end_to_end(initial='autoencoder', generative='vae', dataset='mnist', ini
             fig = interpolate_ims(latents, vae, randrange(50), randrange(50))
             pdf.savefig(fig)
             
-        for i in range(10):
-            fig = vector_arithmetic(latents, vae, randrange(50), randrange(50), randrange(50))
-            pdf.savefig(fig)
+        if vector_arithmetic == True:
+            for i in range(10):
+                fig = vector_arithmetic(latents, vae, randrange(50), randrange(50), randrange(50))
+                pdf.savefig(fig)
         
     else:
         print("Generative model not supported.")
