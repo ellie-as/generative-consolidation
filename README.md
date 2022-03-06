@@ -1,9 +1,9 @@
 
 ### A generative computational model of consolidation
 
-Code for modelling consolidation as teacher-student learning, in which initial representations of memories are replayed to train a generative model.
+Code for modelling systems consolidation as teacher-student learning, in which initial representations of memories are replayed to train a generative model.
 
-To use this code, clone the repo and launch jupyter lab. Each notebook installs its requirements in the first cell (however in the case of installation issues, you can use AWS SageMaker, e.g. the code was tested with the conda_amazonei_tensorflow2_p36 kernel).
+To use this code, clone the repo and launch jupyter lab. Each notebook installs its requirements in the first cell (however in the case of installation issues, I recommend using AWS SageMaker).
 
 #### Subfolders
 
