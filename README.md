@@ -11,6 +11,7 @@ To use this code, clone the repo and launch jupyter lab. Each notebook installs 
 * **additional_distortions**: other memory distortion results (e.g. modelling the Bartlett (1932) and Deese-Roediger-McDermott results)
 * **shapes_vae**: code for exploring the latent space of a VAE trained on the shapes3d dataset, and testing how latent representations may support semantic memory.
 * **sequence_learning**: code for exploring how the results may extend to memory for sequences (including text and paths on a graph), and how consolidation may improve structural inference.
+* **colab_versions**: Colab-compatible versions of the notebooks, corresponding to the Colab links below. Ignore if not using Colab.
 
 #### Colab notebooks
 
@@ -34,7 +35,7 @@ Figure 9 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-
 Figure 10 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-latent_space.ipynb)
 Figure 11 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-latent_space.ipynb)
 Figure 12 | [./shapes_vae/shapes_vae-semantic_knowledge.ipynb](./shapes_vae/shapes_vae-semantic_knowledge.ipynb)
-Figure 13 | [./main_results/Generate_novelty_plots.ipynb](./novelty_and_memory/Generate_novelty_plots.ipynb)
+Figure 13 | [./main_results/Novelty_and_consolidation.ipynb](./novelty_and_memory/Generate_novelty_plots.ipynb)
 Figure 14 | [./main_results/Hybrid_recall.ipynb](./hybrid_recall/Hybrid_recall.ipynb)
 Figure 15 | [./sequence_learning/Durrant_sequence_model.ipynb](./sequence_learning/Durrant_sequence_model.ipynb)
 Figure 16 | [./sequence_learning/Graph_sequence_model.ipynb](./sequence_learning/Graph_sequence_model.ipynb)
