@@ -81,7 +81,7 @@ def run_end_to_end(initial='autoencoder', generative='vae', dataset='mnist', ini
         vae = VAE(encoder, decoder, kl_weighting)
         opt = keras.optimizers.Adam(lr=lr)
         vae.compile(optimizer=opt)
-        history = vae.fit(predictions, epochs=generative_epochs, verbose=0, batch_size=32, shuffle=True)
+        history = vae.fit(predictions, epochs=generative_epochs, verbose=1, batch_size=32, shuffle=True)
     
         fig = plot_history(history)
         pdf.savefig(fig)
