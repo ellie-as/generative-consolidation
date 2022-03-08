@@ -19,6 +19,7 @@ To enable experimentation with the code without needing to install everything lo
 * End-to-end simulation, which reproduces the main results for the MNIST dataset: https://colab.research.google.com/github/eas-93/generative-consolidation/blob/master/colab_versions/Consolidation_simulation.ipynb
 * Explore the latent space of a trained VAE: https://colab.research.google.com/github/eas-93/generative-consolidation/blob/master/colab_versions/shapes_vae-latent_space.ipynb
 * Explore how latent variable representations could support semantic memory: https://colab.research.google.com/github/eas-93/generative-consolidation/blob/master/colab_versions/shapes_vae-semantic_knowledge.ipynb
+* Train an autoregressive model on random walks in a graph, and show how this produces structural inference: https://colab.research.google.com/github/eas-93/generative-consolidation/blob/master/colab_versions/Graph_sequence_model.ipynb
 
 Note that these may be slow if running on CPU. To switch to GPU in Colab, go to 'Runtime' > 'Change runtime type', and select 'GPU' from the 'Hardware acceleration' dropdown menu. (Note that the free version of Colab will only allow this for one notebook at a time.)
 
