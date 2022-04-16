@@ -1,9 +1,11 @@
 
-### A generative computational model of consolidation
+### A generative model of memory construction and consolidation
 
 Code for modelling systems consolidation as teacher-student learning, in which initial representations of memories are replayed to train a generative model.
 
 To use this code, clone the repo and launch jupyter lab. Each notebook installs its requirements in the first cell (however in the case of installation issues, I recommend using AWS SageMaker).
+
+The modern Hopfield network implementation uses code from https://github.com/ml-jku/hopfield-layers, the repo accompanying Ramsauer et al. (2020) (https://arxiv.org/abs/2008.02217).
 
 #### Subfolders
 
@@ -30,15 +32,17 @@ Figure | Corresponding code
 Figure 3 | [./main_results/Consolidation_simulation.ipynb](./main_results/Consolidation_simulation.ipynb)
 Figure 4 | [./main_results/Consolidation_simulation.ipynb](./main_results/Consolidation_simulation.ipynb)
 Figure 5 | [./main_results/Consolidation_simulation.ipynb](./main_results/Consolidation_simulation.ipynb)
-Figure 6 | [./main_results/Memory_distortions.ipynb](./main_results/Memory_distortions.ipynb)
-Figure 8 | [./additional_distortions/DRM_VAE_and_AE.ipynb](./additional_distortions/DRM_VAE_and_AE.ipynb)
-Figure 9 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-latent_space.ipynb)
-Figure 10 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-latent_space.ipynb)
+Figure 6 | [./main_results/Novelty_and_consolidation.ipynb](./main_results/Novelty_and_consolidation.ipynb)
+Figure 7 | [./main_results/Hybrid_recall.ipynb](./main_results/Hybrid_recall.ipynb)
+Figure 9 | [./additional_distortions/DRM_VAE_and_AE_v1.ipynb](./additional_distortions/DRM_VAE_and_AE.ipynb)
+Figure 10 | [./main_results/Memory_distortions.ipynb](./main_results/Memory_distortions.ipynb)
 Figure 11 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-latent_space.ipynb)
-Figure 12 | [./shapes_vae/shapes_vae-semantic_knowledge.ipynb](./shapes_vae/shapes_vae-semantic_knowledge.ipynb)
-Figure 13 | [./main_results/Novelty_and_consolidation.ipynb](./main_results/Novelty_and_consolidation.ipynb)
-Figure 14 | [./main_results/Hybrid_recall.ipynb](./main_results/Hybrid_recall.ipynb)
-Figure 15 | [./sequence_learning/Durrant_sequence_model.ipynb](./sequence_learning/Durrant_sequence_model.ipynb)
-Figure 16 | [./sequence_learning/Graph_sequence_model.ipynb](./sequence_learning/Graph_sequence_model.ipynb)
+Figure 12 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-latent_space.ipynb)
+Figure 13 | [./shapes_vae/shapes_vae-latent_space.ipynb](./shapes_vae/shapes_vae-latent_space.ipynb)
+Figure 14 | [./shapes_vae/shapes_vae-semantic_knowledge.ipynb](./shapes_vae/shapes_vae-semantic_knowledge.ipynb)
+Figure 15 | [./main_results/Temporal_gradients.ipynb](./main_results/Temporal_gradients.ipynb)
+Figure 16 | [./sequence_learning/Durrant_sequence_model.ipynb](./sequence_learning/Durrant_sequence_model.ipynb)
+Figure 17 | [./sequence_learning/Graph_sequence_model.ipynb](./sequence_learning/Graph_sequence_model.ipynb)
+Figure 18 | [./additional_distortions/bartlett_experiment.ipynb](./sequence_learning/Graph_sequence_model.ipynb)
 
 
